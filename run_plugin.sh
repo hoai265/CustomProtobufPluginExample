@@ -1,0 +1,1 @@
+protoc --plugin=protoc-gen-custom=dist/custom_plugin --custom_out=./build test.proto
