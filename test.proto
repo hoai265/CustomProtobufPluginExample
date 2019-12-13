@@ -1,0 +1,16 @@
+syntax = "proto2";
+import "custom_options.proto";
+
+package my_custom.protobuf;
+
+message SubMessage {
+    optional sint32 sub_message_field_1 = 1 [(custom).private_field = true];
+    optional sint32 sub_message_field_2 = 2 [(custom).private_field = true];
+    optional sint32 sub_message_field_3 = 3 [(custom).private_field = true];
+}
+
+message Configuration {
+    optional bytes config_field_1 = 1 [(custom).private_field = true];
+    optional bytes config_field_2 = 2 [(custom).private_field = false];
+    optional SubMessage sub_message = 3;
+}
